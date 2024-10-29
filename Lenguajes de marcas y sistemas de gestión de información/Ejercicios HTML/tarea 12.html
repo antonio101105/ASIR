@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es_ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tarea 12</title>
+    <style>
+        .collage {
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5px;
+        }
+        .collage img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+    <!--Define que el elemento se comportará como una cuadrícula
+    Crea dos columnas de igual tamaño dentro de la cuadrícula. 
+    1fr significa una fracción del espacio disponible.
+    Establece un espacio de 10 píxeles entre cada elemento de la cuadrícula.-->
+</head>
+<body>
+    <div class="collage">
+        <figure>
+            <img src="m5.jpeg" alt="BMW M5" width="40%">
+            <figcaption>Esta es una imagen de un M5.</figcaption>  
+        </figure>
+        <figure>
+            <img src="m6.jpeg" alt="BMW M6" width="40%">
+            <figcaption>Esta es una imagen de un M6.</figcaption>  
+        </figure>
+        <figure>
+            <img src="m7.jpeg" alt="BMW M7" width="40%">
+            <figcaption>Esta es una imagen de un M7.</figcaption>  
+        </figure>
+        <figure>
+            <img src="m8.jpeg" alt="BMW M8" width="40%">
+            <figcaption>Esta es una imagen de un M8.</figcaption>  
+        </figure>
+    </div>
+</body>
+</html>
