@@ -1,0 +1,61 @@
+tareas html
+Ejercicio 1: Página básica con encabezados y párrafos
+Crea una página con un título (<title>), un encabezado principal (<h1>) y tres párrafos (<p>).
+Ejercicio 2: Lista de tareas
+Crea una lista desordenada (<ul>) con al menos 5 tareas que haces en un día típico. Incluye 
+subtareas utilizando listas anidadas.
+Ejercicio 3: Página de perfil personal
+Crea una página sobre ti mismo que contenga un encabezado (<h1>) con tu nombre, un párrafo 
+describiendo tus intereses y una lista ordenada (<ol>) con tus hobbies o cosas favoritas.
+Ejercicio 4: Enlace a tus sitios web favoritos
+Crea una lista desordenada con enlaces (<a>) a tres sitios web que visitas regularmente. Asegúrate 
+de que los enlaces abran en una nueva pestaña.
+Ejercicio 5: Página con una imagen y descripción
+Crea una página con un título, una imagen (<img>), asegurándote de que tenga un texto alternativo 
+(<alt>) y un párrafo debajo de la imagen describiéndola.
+Ejercicio 6: Estructura semántica
+Crea una página con una estructura semántica adecuada usando <header>, <main>, y <footer>. En 
+el <header> coloca un título y una breve descripción de la página.
+Ejercicio 7: Tabla de productos
+Crea una tabla (<table>) que muestre una lista de productos. La tabla debe tener: Una fila de 
+encabezado (<th>) con las columnas: Producto, Descripción, Precio.
+Ejercicio 8: Formulario de contacto básico
+Crea un formulario que incluya un campo de texto para el nombre, un campo de texto para el correo 
+electrónico y un área de texto para dejar un mensaje.
+Ejercicio 9: Formulario de registro con validación
+Crea un formulario que incluya: Un campo para el nombre, un campo de contraseña (<input 
+type='password'>) y un campo para confirmar la contraseña.
+Ejercicio 10: Página de recetas
+Crea una página para una receta de cocina que incluya: Un encabezado con el nombre de la receta, 
+una lista desordenada de ingredientes y una lista ordenada de pasos a seguir.
+Ejercicio 11: Página con enlaces internos
+Crea una página que contenga tres secciones con sus correspondientes títulos. Luego, crea un índice 
+al principio de la página con enlaces internos que permitan navegar a cada sección.
+Ejercicio 12: Página de galería de imágenes
+Crea una galería de imágenes con al menos 4 imágenes utilizando la etiqueta <figure> y <figcaption> 
+para agregar descripciones a cada imagen.
+Ejercicio 13: Formulario con selección múltiple
+Crea un formulario de suscripción que incluya: Un campo de correo electrónico, una lista de 
+verificación con tres opciones de suscripción y un campo de selección para elegir la frecuencia de 
+correos.
+Ejercicio 14: Crear una tabla de horarios
+Crea una tabla para un horario semanal. La tabla debe tener: Días de la semana en las columnas y 
+Horas o sesiones en las filas.
+Ejercicio 15: Página con multimedia
+Crea una página que contenga un video de YouTube incrustado utilizando <iframe> y un audio de 
+ejemplo usando la etiqueta <audio> con controles.
+Ejercicio 16: Página de productos con botones
+Crea una página que muestre al menos 3 productos en formato de tabla o lista. Cada producto debe 
+tener un botón de 'Añadir al carrito'.
+Ejercicio 17: Crear un formulario con varios tipos de entradas
+Crea un formulario de 'Reservación de hotel' que incluya: Campos de texto para el nombre y el correo, 
+un menú desplegable para elegir el tipo de habitación.
+Ejercicio 18: Página con navegación en barra lateral
+Crea una página con una barra lateral de navegación usando una lista desordenada. La barra lateral 
+debe tener enlaces a secciones de la misma página (usa anclajes).
+Ejercicio 19: Página con formularios dinámicos
+Crea un formulario de 'Encuesta de satisfacción' que incluya: Campos de texto para el nombre y el 
+correo, una escala del 1 al 5 para puntuar la satisfacción.
+Ejercicio 20: Página con elementos interactivos
+Crea una página que incluya un formulario de registro con campos obligatorios, una tabla con 
+productos y un botón que al hacer clic, oculte o muestre el contenido de una sección
