@@ -1,0 +1,12 @@
+activacion de log de errores
+1.  Abrimos terminal de MySQL PLUS
+2.  Iniciamos como usuario SYSTEM AS SYSDBA con su respectiva contraseña
+3.  Buscamos ARCHIVE LOG LIST y vemos si esta activado o desactivado 
+4.  SELECT LOG_MODE FROM V$DATABASE;
+5.  SHUTDOWN IMMEDIATE;
+6.  STARTUP MOUNT;
+7.  ALTER DATABASE ARCHIVELOG;
+8.  ALTER SYSTEM SET LOG_ARCHIVE_START=TRUE SCOPE=SPFILE;
+9.  SHUTDOWN IMMEDIATE;
+10.  STARTUP;
+11.  ARCHIVE LOG LIST;
