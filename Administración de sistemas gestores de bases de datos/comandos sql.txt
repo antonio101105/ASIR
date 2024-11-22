@@ -1,0 +1,42 @@
+select table_name from user_tables; 
+
+create table empleados ( empleado_id number primary key, nombre varchar2(50) not null, apellido varchar2(50), salario number(10,2), fecha_contratacion date );
+
+DESCRIBE empleados
+
+drop table empleados
+
+insert into empleados (empleado_id, nombre, apellido, salario, fecha_contratacion)
+values (1, 'juan', 'perez', 3000.00, to_date('2023-10-01','YYYY-MM-DD'));
+
+insert all 
+into empleados (empleado_id, nombre, apellido, salario, fecha_contratacion)
+values (2, 'luis', 'nuñez', 2750.20, to_date('2023-09-01','YYYY-MM-DD'))
+into empleados (empleado_id, nombre, apellido, salario, fecha_contratacion)
+values (3, 'ana', 'lopez', 2800.00, to_date('2023-12-01','YYYY-MM-DD'))
+into empleados (empleado_id, nombre, apellido, salario, fecha_contratacion)
+values (4, 'carlos', 'matinez', 3200.00, to_date('2023-12-05','YYYY-MM-DD'))
+select * from dual;
+
+show table empleados
+
+select * from empleados
+
+insert into empleados (empleado_id, nombre, apellido)
+values (5,'sara','fernandez');
+
+insert into empleados (empleado_id, nombre, apellido, salario, fecha_contratacion)
+values (6,'clara','martin',null,null);
+
+select * from empleados;
+
+select empleado_id, nombre, salario
+ from empleados;
+
+select empleado_id, nombre, salario
+from empleados
+where salario > 2800;
+
+delete from empleados
+where salario <2000 ;
+
