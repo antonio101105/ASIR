@@ -1,0 +1,14 @@
+Tipo de Dato                      Descripción
+NUMBER(p, s)                      Número con precisión p y escala s
+INTEGER                           Número entero
+FLOAT(p)                          Número en formato de punto flotante
+CHAR(n)                           Cadena de longitud fija n
+VARCHAR2(n)                       Cadena de longitud variable n
+CLOB                              Texto de gran tamaño, hasta 4GB
+Fecha y hora                      DATE
+TIMESTAMP                         Fecha y hora con fracción de segundos
+TIMESTAMP WITH TIME ZONE          Fecha y hora con zona horaria
+BLOB                              Datos binarios de gran tamaño
+BFILE                              Referencia a un archivo binario externo
+RAW(n)                            Datos binarios de longitud fija n
+LONG                              Texto de gran tamaño, obsoleto
