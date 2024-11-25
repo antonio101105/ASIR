@@ -73,4 +73,10 @@ MODIFY (pais DEFAULT 'argentina');
 alter table empleados2
 MODIFY (pais DEFAULT null);
 
+select nombre, salario, salario*1.10 as nuevo_salario
+from empleados;
+
+select nombre ||' '|| apellido as nombre_completo
+from empleados;
+
 
