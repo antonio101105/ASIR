@@ -2,3 +2,4 @@ SUMA                salario + 500
 RESTA               salario - 100
 MULTIPLICACION      salario * 1.20
 DIVISIÓN            salario / 2
+CONCATENACION       nombre ||' '|| apellido
