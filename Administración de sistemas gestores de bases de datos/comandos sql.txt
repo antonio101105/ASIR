@@ -79,4 +79,47 @@ from empleados;
 select nombre ||' '|| apellido as nombre_completo
 from empleados;
 
+select nombre ||' '|| apellido as nombre_completo, salario,
+    salario *0.95 as salario_despues_impuestos,
+    'Empleado:'|| nombre || 'tiene un salario neto de' ||
+    to_char(salario*0.95,'9999.99') as mensaje
+from empleados;
+
+select empleado_id, nombre, apellido, salario, salario*12 as sueldo_anual
+from empleados;
+
+select nombre||' '||apellido as nombre_completo, salario, salario*12 as sueldo_anual
+from empleados;
+
+select nombre||' '||apellido as "nombre completo", salario, salario*1.5 as "salario con aumento"
+from empleados;
+
+select upper (nombre) as "nombre en mayusculas",
+    lower (apellido) as "apellido en minusculas "
+from empleados;
+
+SELECT  INITCAP ( nombre ||' '|| apellido) AS nombre_completo
+FROM empleados;
+
+select INSTR(nombre,'a') as posicion_a
+from empleados;
+
+select replace(nombre,'a','e') as "nombre_modificado"
+from empleados;
+
+select lpad (nombre,10,'*')as asterizquierda,
+    rpad (nombre, 10, '*')as asterderecha
+from empleados;
+
+select trim(' texto ') as Texto_sin_espacios
+from empleados;
+
+select trim(nombre||apellido||salario||fecha_contratacion||empleado_id) as Texto_sin_espacios
+from empleados;
+
+select concat (nombre, apellido) as nombre_completo
+from empleados;
+
+select to_char(salario,'9999.99') as salario_formateado
+from empleados;
 
