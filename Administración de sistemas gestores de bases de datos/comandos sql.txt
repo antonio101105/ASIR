@@ -123,3 +123,11 @@ from empleados;
 select to_char(salario,'9999.99') as salario_formateado
 from empleados;
 
+select abs(17.25) as absoluto 
+from dual;
+
+select ceil(salario) as techo
+from empleados;
+
+select floor(salario) as suelo
+from empleados;
