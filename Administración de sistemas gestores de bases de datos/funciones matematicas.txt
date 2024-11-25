@@ -1,0 +1,3 @@
+ABS                            da valor absoluto
+CEIL                           redondea hacia arriba
+FLOOR                          redondea hacia abajo
