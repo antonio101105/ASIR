@@ -1,11 +1,15 @@
 select table_name from user_tables; 
+~Este comando muestra una lista de todas las tablas que el usuario ha creado en la base de datos Oracle.~
 
 create table empleados ( empleado_id number primary key, nombre varchar2(50) not null, apellido varchar2(50), salario number(10,2), fecha_contratacion date );
+~Este comando SQL crea una tabla EMPLEADOS con las columnas especificadas para almacenar información sobre empleados.~
 
 DESCRIBE empleados;
+~El comando DESCRIBE EMPLEADOS; proporciona una descripción de la estructura de la tabla EMPLEADOS. Esto incluye los nombres de las columnas, tipos de datos y restricciones asociadas.~
 
 insert into empleados (empleado_id, nombre, apellido, salario, fecha_contratacion)
 values (1, 'juan', 'perez', 3000.00, to_date('2023-10-01','YYYY-MM-DD'));
+~Este comando añade un nuevo empleado con el ID 1, nombre Juan Pérez, salario de 3000.00, y fecha de contratación 1 de octubre de 2023 a la tabla EMPLEADOS.~
 
 insert all 
 into empleados (empleado_id, nombre, apellido, salario, fecha_contratacion)
@@ -15,28 +19,34 @@ values (3, 'ana', 'lopez', 2800.00, to_date('2023-12-01','YYYY-MM-DD'))
 into empleados (empleado_id, nombre, apellido, salario, fecha_contratacion)
 values (4, 'carlos', 'matinez', 3200.00, to_date('2023-12-05','YYYY-MM-DD'))
 select * from dual;
-
-show table empleados
+~Este comando SQL inserta múltiples filas en la tabla EMPLEADOS en una sola instrucción.~
 
 select * from empleados
+~Este comando es útil para ver todo el contenido de la tabla EMPLEADOS de una vez.~
 
 insert into empleados (empleado_id, nombre, apellido)
 values (5,'sara','fernandez');
+~Este comando añade un nuevo empleado con el ID 5, nombre Sara, y apellido Fernandez a la tabla EMPLEADOS. Las demás columnas (SALARIO y FECHA_CONTRATACION) quedarán vacías o con valores por defecto, si están configurados así en la base de datos.~
 
 insert into empleados (empleado_id, nombre, apellido, salario, fecha_contratacion)
 values (6,'clara','martin',null,null);
+~Este comando añade un nuevo empleado con el ID 6, nombre Clara, y apellido Martin a la tabla EMPLEADOS, dejando las columnas SALARIO y FECHA_CONTRATACION vacías (nulas).~
 
 select * from empleados;
+~Este comando es útil para ver todo el contenido de la tabla EMPLEADOS de una vez.~
 
 select empleado_id, nombre, salario
  from empleados;
+~Este comando mostrará una lista con los ID de empleados, sus nombres y sus salarios.~
 
 select empleado_id, nombre, salario
 from empleados
 where salario > 2800;
+~Este comando mostrará una lista con los empleados cuyos salarios son superiores a 2800.~
 
 delete from empleados
 where salario <2000 ;
+~Este comando eliminará cualquier registro de la tabla EMPLEADOS que tenga un salario inferior a 2000.~
 
 /*esto es un comentario
 de varias lineas. Oracle
@@ -48,13 +58,17 @@ join all_constraints t
 on c.constraint_name = t.constraint_name
 where t.constraint_type = 'P'
 and t.table_name = 'EMPLEADOS';
+~Este comando proporciona una lista de las columnas que forman la clave primaria de la tabla EMPLEADOS.~
 
 truncate table empleados;
+~Este comando SQL se utiliza para eliminar rápidamente todos los registros de la tabla EMPLEADOS y liberar el espacio de almacenamiento que ocupaban.~
 
 drop table empleados;
+~Este comando SQL elimina completamente la tabla EMPLEADOS de la base de datos, junto con todos sus datos y definiciones.~
 
-delete table empleados
-from empleado_id < 4;
+DELETE FROM EMPLEADOS 
+WHERE EMPLEADO_ID < 4;
+~Este comando eliminará todas las filas en la tabla EMPLEADOS donde el EMPLEADO_ID sea menor que 4.~
 
 create table empleados2 (
 empleado_id number primary key,
@@ -63,71 +77,93 @@ salario number(8,2),
 fecha_contratacion date default sysdate,
 pais varchar2(30) default 'españa'
 );
+~Este comando establece la estructura de la tabla EMPLEADOS2 con columnas para ID, nombre, salario, fecha de contratación y país, incluyendo valores por defecto para la fecha de contratación y el país.~
 
 insert into empleados2 (empleado_id,nombre, salario)
 values (1, 'ana lopez', 2500);
+~Este comando añade un nuevo empleado con el ID 1, nombre Ana Lopez, y salario de 2500 a la tabla EMPLEADOS2. Las demás columnas (FECHA_CONTRATACION y PAIS) tomarán sus valores por defecto: la fecha actual y "España", respectivamente.~
 
 alter table empleados2
 MODIFY (pais DEFAULT 'argentina');
+~Después de ejecutar este comando, cualquier nueva fila insertada en la tabla EMPLEADOS2 que no especifique un valor para la columna PAIS tendrá 'ARGENTINA' como valor por defecto.~
 
 alter table empleados2
 MODIFY (pais DEFAULT null);
+~Después de ejecutar este comando, cualquier nueva fila insertada en la tabla EMPLEADOS2 que no especifique un valor para la columna PAIS no tendrá un valor por defecto asignado y la columna quedará como NULL.~
 
 select nombre, salario, salario*1.10 as nuevo_salario
 from empleados;
+~Este comando mostrará una lista con los nombres de los empleados, sus salarios actuales y sus nuevos salarios incrementados en un 10%.~
 
 select nombre ||' '|| apellido as nombre_completo
 from empleados;
+~Este comando SQL concatena los valores de las columnas NOMBRE y APELLIDO con un espacio en medio, y los muestra como una nueva columna llamada NOMBRE_COMPLETO.~
 
 select nombre ||' '|| apellido as nombre_completo, salario,
     salario *0.95 as salario_despues_impuestos,
     'Empleado:'|| nombre || 'tiene un salario neto de' ||
     to_char(salario*0.95,'9999.99') as mensaje
 from empleados;
+~Este comando muestra una lista con los nombres completos de los empleados, sus salarios originales, sus salarios después de impuestos y un mensaje personalizado para cada uno.~
 
 select empleado_id, nombre, apellido, salario, salario*12 as sueldo_anual
 from empleados;
+~Este comando SQL recupera los valores de las columnas EMPLEADO_ID, NOMBRE, APELLIDO y SALARIO de todas las filas en la tabla EMPLEADOS y calcula el SUELDO_ANUAL multiplicando el salario mensual por 12.~
 
 select nombre||' '||apellido as nombre_completo, salario, salario*12 as sueldo_anual
 from empleados;
+~Este comando SQL concatena los valores de las columnas NOMBRE y APELLIDO con un espacio en medio, muestra el salario mensual y calcula el salario anual (multiplicando el salario mensual por 12) para todos los empleados en la tabla EMPLEADOS.~
 
 select nombre||' '||apellido as "nombre completo", salario, salario*1.5 as "salario con aumento"
 from empleados;
+~Este comando SQL concatena los valores de las columnas NOMBRE y APELLIDO con un espacio en medio para crear una columna llamada "NOMBRE COMPLETO". También selecciona la columna SALARIO y calcula una nueva columna llamada "SALARIO CON AUMENTO", que es el salario original incrementado en un 50%.~
 
 select upper (nombre) as "nombre en mayusculas",
     lower (apellido) as "apellido en minusculas "
 from empleados;
+~Este comando SQL convierte el valor de la columna NOMBRE a mayúsculas y el valor de la columna APELLIDO a minúsculas, y las muestra con los alias "NOMBRE EN MAYUSCULAS" y "APELLIDO EN MINUSCULAS".~
 
 SELECT  INITCAP ( nombre ||' '|| apellido) AS nombre_completo
 FROM empleados;
+~Este comando SQL convierte la primera letra de cada palabra en mayúscula (capitaliza) y las letras restantes en minúscula de la columna resultante NOMBRE_COMPLETO, que se forma concatenando NOMBRE y APELLIDO con un espacio en medio.~
 
 select INSTR(nombre,'a') as posicion_a
 from empleados;
+~Este comando SQL utiliza la función INSTR para encontrar la posición de la primera aparición del carácter 'a' en la columna NOMBRE de la tabla EMPLEADOS.~
 
 select replace(nombre,'a','e') as "nombre_modificado"
 from empleados;
+~Este comando SQL utiliza la función REPLACE para sustituir todas las apariciones del carácter 'a' por 'e' en la columna NOMBRE de la tabla EMPLEADOS.~
 
 select lpad (nombre,10,'*')as asterizquierda,
     rpad (nombre, 10, '*')as asterderecha
 from empleados;
+~Este comando SQL utiliza las funciones LPAD y RPAD para añadir asteriscos (*) a la izquierda y a la derecha del valor de la columna NOMBRE hasta que su longitud sea de 10 caracteres.~
 
 select trim(' texto ') as Texto_sin_espacios
 from empleados;
+~Este comando SQL utiliza la función TRIM para eliminar los espacios en blanco al principio y al final de la cadena ' texto ', y muestra el resultado en una nueva columna llamada TEXTO_SIN_ESPACIOS.~
 
 select trim(nombre||apellido||salario||fecha_contratacion||empleado_id) as Texto_sin_espacios
 from empleados;
+~Este comando SQL utiliza la función TRIM para eliminar cualquier espacio en blanco al principio y al final de la concatenación de las columnas NOMBRE, APELLIDO, SALARIO, FECHA_CONTRATACION y EMPLEADO_ID, y lo muestra en una nueva columna llamada TEXTO_SIN_ESPACIOS.~
 
 select concat (nombre, apellido) as nombre_completo
 from empleados;
+~Este comando SQL utiliza la función CONCAT para concatenar los valores de las columnas NOMBRE y APELLIDO y muestra el resultado en una nueva columna llamada NOMBRE_COMPLETO.~
 
 select to_char(salario,'9999.99') as salario_formateado
 from empleados;
+~Este comando SQL utiliza la función TO_CHAR para formatear los valores de la columna SALARIO en un formato específico y muestra el resultado en una nueva columna llamada SALARIO_FORMATEADO.~
 
 select abs(17.25) as absoluto 
 from dual;
+~Este comando SQL utiliza la función ABS para calcular el valor absoluto de 17.25 y muestra el resultado en una nueva columna llamada ABSOLUTO.~
 
 select ceil(salario) as techo
 from empleados;
+~Este comando SQL utiliza la función CEIL para redondear al alza los valores de la columna SALARIO y muestra el resultado en una nueva columna llamada TECHO.~
 
 select floor(salario) as suelo
 from empleados;
+~Este comando SQL utiliza la función FLOOR para redondear a la baja los valores de la columna SALARIO y muestra el resultado en una nueva columna llamada SUELO.~
