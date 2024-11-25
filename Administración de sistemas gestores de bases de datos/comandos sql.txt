@@ -64,4 +64,13 @@ fecha_contratacion date default sysdate,
 pais varchar2(30) default 'españa'
 );
 
+insert into empleados2 (empleado_id,nombre, salario)
+values (1, 'ana lopez', 2500);
+
+alter table empleados2
+MODIFY (pais DEFAULT 'argentina');
+
+alter table empleados2
+MODIFY (pais DEFAULT null);
+
 
