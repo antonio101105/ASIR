@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CampeonatoOrnitologico>
+    <Edicion numero="19" año="2014">
+        <InformacionGeneral>
+            <Nombre>Campeonato Ornitológico de Andalucía</Nombre>
+            <Sede>
+                <Nombre>Club Deportivo Hípica Botafuegos</Nombre>
+                <Localizacion>Algeciras, Cádiz</Localizacion>
+            </Sede>
+            <Capacidad>15000</Capacidad>
+            <Fechas>
+                <Admisiones inicio="2014-11-07" fin="2014-11-08"/>
+                <Enjuiciamientos fecha="2014-11-09"/>
+                <OrganizacionStands inicio="2014-11-10" fin="2014-11-12"/>
+                <AperturaPublico inicio="2014-11-13" fin="2014-11-16"/>
+                <Clausura fecha="2014-11-16"/>
+            </Fechas>
+        </InformacionGeneral>
+        <ComiteOrganizador>
+            <Miembro>
+                <NombreCompleto>Miguel Ángel López Rodríguez</NombreCompleto>
+                <Nacimiento>1965-06-14</Nacimiento>
+                <Cargo>Presidente</Cargo>
+                <DesdeAño>1990</DesdeAño>
+                <Contacto>
+                    <Telefono>666777888</Telefono>
+                    <Email>presidente@foa.es</Email>
+                    <Direccion>
+                        <Calle>Calle Argentina, 1</Calle>
+                        <CodigoPostal>28086</CodigoPostal>
+                        <Ciudad>Madrid</Ciudad>
+                        <Pais>España</Pais>
+                    </Direccion>
+                </Contacto>
+                <Asociaciones>
+                    <Asociacion>
+                        <Nombre>Asociación Ornitológica Madrileña</Nombre>
+                        <Cargo>Presidente</Cargo>
+                    </Asociacion>
+                    <Asociacion>
+                        <Nombre>Asociación Roquetera Ornitológica</Nombre>
+                        <Cargo>Criador</Cargo>
+                    </Asociacion>
+                </Asociaciones>
+                <Palmares>
+                    <Oro>58</Oro>
+                    <Plata>40</Plata>
+                    <Bronce>76</Bronce>
+                </Palmares>
+            </Miembro>
+            <Miembro>
+                <NombreCompleto>Alfredo Correa Correa</NombreCompleto>
+                <Nacimiento>1983-06-24</Nacimiento>
+                <Cargo>Secretario</Cargo>
+                <DesdeAño>2001</DesdeAño>
+                <Contacto>
+                    <Telefono>666555444</Telefono>
+                    <Email>secretario@foa.es</Email>
+                    <Direccion>
+                        <Calle>Carretera de Ronda, 106</Calle>
+                        <CodigoPostal>18003</CodigoPostal>
+                        <Ciudad>Granada</Ciudad>
+                        <Pais>España</Pais>
+                    </Direccion>
+                </Contacto>
+                <Asociaciones>
+                    <Asociacion>
+                        <Nombre>Asociación Ornitológica Alhambra</Nombre>
+                        <Cargo>Criador</Cargo>
+                    </Asociacion>
+                </Asociaciones>
+                <Palmares>
+                    <Oro>20</Oro>
+                    <Plata>10</Plata>
+                    <Bronce>0</Bronce>
+                </Palmares>
+            </Miembro>
+        </ComiteOrganizador>
+    </Edicion>
+</CampeonatoOrnitologico>

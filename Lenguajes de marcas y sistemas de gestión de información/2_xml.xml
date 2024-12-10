@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SolicitudesInscripcion>
+    <Concurso>
+        <Codigo>FOA19</Codigo>
+        <Nombre>Campeonato Ornitológico de Andalucía</Nombre>
+        <Lugar>Algeciras, Cádiz</Lugar>
+        <FechaInicio>2014-11-13</FechaInicio>
+        <FechaFin>2014-11-16</FechaFin>
+    </Concurso>
+    <Inscripciones>
+        <Inscripcion>
+            <Criador>
+                <NombreCompleto>Miguel Ángel López Rodríguez</NombreCompleto>
+                <Telefonos>
+                    <Telefono>666777888</Telefono>
+                </Telefonos>
+                <CodigoCriador>MA001</CodigoCriador>
+                <Catalogo tipo="papel">12</Catalogo>
+                <MostrarTelefonosEnCatalogo>Si</MostrarTelefonosEnCatalogo>
+            </Criador>
+            <Asociacion>
+                <Codigo>AA123</Codigo>
+                <RazonSocial>Asociación Ornitológica Madrileña</RazonSocial>
+                <Telefono>911223344</Telefono>
+                <Fax>911223345</Fax>
+            </Asociacion>
+            <Categorias>
+                <Categoria>
+                    <Nombre>Canarios de Color</Nombre>
+                    <NumeroPajaros>10</NumeroPajaros>
+                    <CostoPorPajaros>40</CostoPorPajaros>
+                </Categoria>
+                <Categoria>
+                    <Nombre>Exóticos</Nombre>
+                    <NumeroPajaros>5</NumeroPajaros>
+                    <CostoPorPajaros> 120 Total total `
