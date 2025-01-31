@@ -1,6 +1,7 @@
 He encontrado la solucion a los errores 12514 y 12505 de sqldeveloper.
 Os dejor por aqui la solución:
 *IPMPORTANTE DEBE SER UN ~CMD~ CON PRIVILEGIOS DE ADMINISTRADOR*
+'''code'''
 Microsoft Windows [Versión 10.0.26120.3000]
 (c) Microsoft Corporation. Todos los derechos reservados.
 
@@ -119,3 +120,4 @@ El servicio "xepdb1" tiene 1 instancia(s).
       "DEDICATED" establecido:0 rechazado:0 estado:ready
          LOCAL SERVER
 El comando ha terminado correctamente
+'''
