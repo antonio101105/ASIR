@@ -1,0 +1,121 @@
+He encontrado la solucion a los errores 12514 y 12505 de sqldeveloper.
+Os dejor por aqui la solución:
+*IPMPORTANTE DEBE SER UN ~CMD~ CON PRIVILEGIOS DE ADMINISTRADOR*
+Microsoft Windows [Versión 10.0.26120.3000]
+(c) Microsoft Corporation. Todos los derechos reservados.
+
+C:\Windows\System32>sql sys as sysdba
+Error: no se ha encontrado o cargado la clase principal oracle.dbtools.raptor.scriptrunner.cmdline.SqlCli
+
+C:\Windows\System32>sqlplus sys as sysdba
+
+SQL*Plus: Release 21.0.0.0.0 - Production on Vie Ene 31 19:45:12 2025
+Version 21.3.0.0.0
+
+Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+
+Introduzca la contrase±a:
+
+Conectado a:
+Oracle Database 21c Express Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+
+SQL> show parameter local_listener
+
+NAME                                 TYPE        VALUE
+------------------------------------ ----------- ------------------------------
+local_listener                       string      LISTENER_XE
+SQL> exit
+Desconectado de Oracle Database 21c Express Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+
+C:\Windows\System32>lsnrctl services orcl
+
+LSNRCTL for 64-bit Windows: Version 21.0.0.0.0 - Production on 31-ENE-2025 19:46:33
+
+Copyright (c) 1991, 2021, Oracle.  All rights reserved.
+
+Conectßndose a (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=ORCL)))
+Resumen de Servicios...
+El servicio "CLRExtProc" tiene 1 instancia(s).
+  La instancia "CLRExtProc", con estado UNKNOWN, tiene 1 manejador(es) para este servicio...
+    Manejador(es):
+      "DEDICATED" establecido:0 rechazado:0
+         LOCAL SERVER
+El comando ha terminado correctamente
+
+C:\Windows\System32>sqlplus sys as sysdba
+
+SQL*Plus: Release 21.0.0.0.0 - Production on Vie Ene 31 19:47:22 2025
+Version 21.3.0.0.0
+
+Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+
+Introduzca la contrase±a:
+
+Conectado a:
+Oracle Database 21c Express Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+
+SQL> alter system set LOCAL_LISTENER='(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))' scope=both;
+
+Sistema modificado.
+
+SQL> alter system register;
+
+Sistema modificado.
+
+SQL> show parameter local_listener
+
+NAME                                 TYPE        VALUE
+------------------------------------ ----------- ------------------------------
+local_listener                       string      (ADDRESS=(PROTOCOL=TCP)(HOST=l
+                                                 ocalhost)(PORT=1521))
+SQL> exit
+Desconectado de Oracle Database 21c Express Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+
+C:\Windows\System32>lsnrctl services orcl
+
+LSNRCTL for 64-bit Windows: Version 21.0.0.0.0 - Production on 31-ENE-2025 19:50:45
+
+Copyright (c) 1991, 2021, Oracle.  All rights reserved.
+
+Conectßndose a (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=ORCL)))
+Resumen de Servicios...
+El servicio "99dffcd5f250454aad0500b0916f1454" tiene 1 instancia(s).
+  La instancia "xe", con estado READY, tiene 2 manejador(es) para este servicio...
+    Manejador(es):
+      "N000:dedicated" establecido:0 rechazado:0 estado:ready
+         CMON <machine: LAPTOP-J596RJD5, pid: 5068_18540>
+         (ADDRESS=(PROTOCOL=tcp)(HOST=127.0.0.1)(PORT=49780))
+      "DEDICATED" establecido:0 rechazado:0 estado:ready
+         LOCAL SERVER
+El servicio "CLRExtProc" tiene 1 instancia(s).
+  La instancia "CLRExtProc", con estado UNKNOWN, tiene 1 manejador(es) para este servicio...
+    Manejador(es):
+      "DEDICATED" establecido:0 rechazado:0
+         LOCAL SERVER
+El servicio "XE" tiene 1 instancia(s).
+  La instancia "xe", con estado READY, tiene 2 manejador(es) para este servicio...
+    Manejador(es):
+      "N000:dedicated" establecido:0 rechazado:0 estado:ready
+         CMON <machine: LAPTOP-J596RJD5, pid: 5068_18540>
+         (ADDRESS=(PROTOCOL=tcp)(HOST=127.0.0.1)(PORT=49780))
+      "DEDICATED" establecido:0 rechazado:0 estado:ready
+         LOCAL SERVER
+El servicio "XEXDB" tiene 1 instancia(s).
+  La instancia "xe", con estado READY, tiene 1 manejador(es) para este servicio...
+    Manejador(es):
+      "D000" establecidos:0 rechazados:0 actuales:0 mßximo:1022 estado:ready
+         DISPATCHER <machine: LAPTOP-J596RJD5, pid: 5068_18464>
+         (ADDRESS=(PROTOCOL=tcp)(HOST=LAPTOP-J596RJD5)(PORT=49779))
+El servicio "xepdb1" tiene 1 instancia(s).
+  La instancia "xe", con estado READY, tiene 2 manejador(es) para este servicio...
+    Manejador(es):
+      "N000:dedicated" establecido:0 rechazado:0 estado:ready
+         CMON <machine: LAPTOP-J596RJD5, pid: 5068_18540>
+         (ADDRESS=(PROTOCOL=tcp)(HOST=127.0.0.1)(PORT=49780))
+      "DEDICATED" establecido:0 rechazado:0 estado:ready
+         LOCAL SERVER
+El comando ha terminado correctamente
