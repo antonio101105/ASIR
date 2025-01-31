@@ -1,7 +1,3 @@
-He encontrado la solucion a los errores 12514 y 12505 de sqldeveloper.
-Os dejor por aqui la solución:
-*IPMPORTANTE DEBE SER UN ~CMD~ CON PRIVILEGIOS DE ADMINISTRADOR*
-'''code'''
 Microsoft Windows [Versión 10.0.26120.3000]
 (c) Microsoft Corporation. Todos los derechos reservados.
 
@@ -13,7 +9,7 @@ C:\Windows\System32>sqlplus sys as sysdba
 SQL*Plus: Release 21.0.0.0.0 - Production on Vie Ene 31 19:45:12 2025
 Version 21.3.0.0.0
 
-Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+Copyright (c) 1982, 2021, Oracle. All rights reserved.
 
 Introduzca la contrase±a:
 
@@ -34,9 +30,9 @@ C:\Windows\System32>lsnrctl services orcl
 
 LSNRCTL for 64-bit Windows: Version 21.0.0.0.0 - Production on 31-ENE-2025 19:46:33
 
-Copyright (c) 1991, 2021, Oracle.  All rights reserved.
+Copyright (c) 1991, 2021, Oracle. All rights reserved.
 
-Conectßndose a (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=ORCL)))
+Conectándose a (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=ORCL)))
 Resumen de Servicios...
 El servicio "CLRExtProc" tiene 1 instancia(s).
   La instancia "CLRExtProc", con estado UNKNOWN, tiene 1 manejador(es) para este servicio...
@@ -50,7 +46,7 @@ C:\Windows\System32>sqlplus sys as sysdba
 SQL*Plus: Release 21.0.0.0.0 - Production on Vie Ene 31 19:47:22 2025
 Version 21.3.0.0.0
 
-Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+Copyright (c) 1982, 2021, Oracle. All rights reserved.
 
 Introduzca la contrase±a:
 
@@ -70,8 +66,7 @@ SQL> show parameter local_listener
 
 NAME                                 TYPE        VALUE
 ------------------------------------ ----------- ------------------------------
-local_listener                       string      (ADDRESS=(PROTOCOL=TCP)(HOST=l
-                                                 ocalhost)(PORT=1521))
+local_listener                       string      (ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))
 SQL> exit
 Desconectado de Oracle Database 21c Express Edition Release 21.0.0.0.0 - Production
 Version 21.3.0.0.0
@@ -80,9 +75,9 @@ C:\Windows\System32>lsnrctl services orcl
 
 LSNRCTL for 64-bit Windows: Version 21.0.0.0.0 - Production on 31-ENE-2025 19:50:45
 
-Copyright (c) 1991, 2021, Oracle.  All rights reserved.
+Copyright (c) 1991, 2021, Oracle. All rights reserved.
 
-Conectßndose a (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=ORCL)))
+Conectándose a (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=ORCL)))
 Resumen de Servicios...
 El servicio "99dffcd5f250454aad0500b0916f1454" tiene 1 instancia(s).
   La instancia "xe", con estado READY, tiene 2 manejador(es) para este servicio...
@@ -108,7 +103,7 @@ El servicio "XE" tiene 1 instancia(s).
 El servicio "XEXDB" tiene 1 instancia(s).
   La instancia "xe", con estado READY, tiene 1 manejador(es) para este servicio...
     Manejador(es):
-      "D000" establecidos:0 rechazados:0 actuales:0 mßximo:1022 estado:ready
+      "D000" establecidos:0 rechazados:0 actuales:0 máximo:1022 estado:ready
          DISPATCHER <machine: LAPTOP-J596RJD5, pid: 5068_18464>
          (ADDRESS=(PROTOCOL=tcp)(HOST=LAPTOP-J596RJD5)(PORT=49779))
 El servicio "xepdb1" tiene 1 instancia(s).
@@ -120,4 +115,3 @@ El servicio "xepdb1" tiene 1 instancia(s).
       "DEDICATED" establecido:0 rechazado:0 estado:ready
          LOCAL SERVER
 El comando ha terminado correctamente
-'''
