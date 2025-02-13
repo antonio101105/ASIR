@@ -3,13 +3,13 @@
 | ESC     | Normal Mode | 
 | I ó i   | Insert Mode |
 | :       | Command Mode |
-|
-|
-|
-|
-|
-|
-|
+| :w      | Guardar     |
+| :**!    | forzar el comando |
+| :q      | salir(pregunta si quieres guardar)  |
+| :q!     | sale sin guardar |
+| :wq     | guardar y salir  |
+| :dd     | borra la linea seleccionada  |
+| :5dd    | borra las 5 lineas inferiores a la selección incluyendo esta  |
 |
 |
 |
