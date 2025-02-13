@@ -1,8 +1,8 @@
 | COMANDO | DESCRIPCIÓN |
-|---|---|
-| ESC | Normal Mode | 
-| I ó i | Insert Mode |
-| : | Comand Mode |
+|---------|-------------|
+| ESC     | Normal Mode | 
+| I ó i   | Insert Mode |
+| :       | Command Mode |
 |
 |
 |
