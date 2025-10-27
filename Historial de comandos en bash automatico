@@ -1,0 +1,61 @@
+
+## 📜 Código de `~/.bashrc`
+
+```bash
+# Directorio donde guardar el historial (ej. en el directorio personal)
+HISTDIR="$HOME/historial_comandos"
+
+# Asegura que el directorio exista
+mkdir -p "$HISTDIR"
+
+# Definir el nombre del archivo con formato dd_mm (ej. mi_historial_27_10.txt)
+# ¡VARIABLE MODIFICADA A HISTORIAL!
+HISTORIAL="$HISTDIR/mi_historial_$(date +%d_%m).txt"
+
+# --- Configuración del Historial Estándar de Bash (para la sesión activa) ---
+HISTSIZE=10000 
+HISTFILESIZE=20000
+HISTCONTROL=ignoreboth
+
+# --- Función para guardar SÓLO el comando en el archivo personalizado ---
+
+# Función que se ejecuta antes de cada nuevo prompt
+append_to_custom_history() {
+    # Evitar guardar comandos vacíos o comandos de historial
+    if [ -n "$BASH_COMMAND" ] && [ "$BASH_COMMAND" != "$PROMPT_COMMAND" ] && [[ ! "$BASH_COMMAND" =~ ^history ]]; then
+        # El comando 'history 1' devuelve: [número] [comando]. 
+        # Usamos 'awk' para imprimir SÓLO el texto del comando.
+        # ESCRIBE EN LA NUEVA VARIABLE: $HISTORIAL
+        history 1 | sed 's/^ *[0-9]* *//' >> "$HISTORIAL"
+    fi
+}
+
+# Ejecutar la función antes de cada prompt.
+PROMPT_COMMAND="append_to_custom_history"
+```
+
+-----
+
+## 📌 Pasos para Aplicar el Cambio
+
+1.  Abre y edita tu archivo `~/.bashrc` (por ejemplo, con `nano ~/.bashrc`).
+
+2.  **Reemplaza** las líneas de configuración anteriores por este nuevo código.
+
+3.  Guarda el archivo y aplica los cambios en tu terminal:
+
+    ```bash
+    source ~/.bashrc
+    ```
+
+A partir de ahora, todos los comandos se guardarán de forma limpia (sin marcas de tiempo) en la ruta definida por la nueva variable **`$HISTORIAL`**.
+
+-----
+
+### Nota sobre `cat "$HISTORIAL"`
+
+Mencionaste en tu solicitud `cat "$HISTORIAL"`. El comando **`cat`** se usa para **mostrar** el contenido de un archivo. Si querías que el nombre de la variable fuera **`cat "$HISTORIAL"`**, esto causaría un error, ya que no es un nombre de variable válido. Asumo que tu intención era **usar la variable `$HISTORIAL`** y luego **mostrar su contenido** usando `cat` una vez que los comandos se hayan guardado, lo cual se haría así:
+
+```bash
+cat "$HISTORIAL"
+```
